@@ -22,6 +22,7 @@ const ItemListContainer = ({greeting}) =>  {
                 const data = doc.data()
                 return {id: doc.id, ...data}
             })
+            console.log (productsAdapted);
             setProducts(productsAdapted)
          })
          .catch (error =>{

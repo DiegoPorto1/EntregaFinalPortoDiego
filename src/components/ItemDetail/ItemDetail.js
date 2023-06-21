@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import { Link } from "react-router-dom";
-import { products } from "../../asyncMock";
 import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({id, name, img,category,description,price, stock}) => {
@@ -11,7 +10,6 @@ const ItemDetail = ({id, name, img,category,description,price, stock}) => {
    
     const handledOnAdd = (quantity) => {
         setQuantityAdded(quantity)
-        addItem(quantity)
     }
     
     

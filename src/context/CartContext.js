@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
             console.error ('El producto ya fue agregado')
         }
     }
-
+    
     const removeItem = (itemId) => {
         const cartUpdated = cart.filter (prod => prod.id !== itemId)
         setCart (cartUpdated)
