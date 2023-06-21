@@ -1,6 +1,6 @@
 export const products = [
     {
-      id: 1,
+     
       name: "Hamburguesa ",
       price: 1000,
       category: 'hamburguesa',
@@ -10,7 +10,7 @@ export const products = [
       
     },
     {
-        id: 2,
+        
         name: "Hamburguesa ",
         price: 1000,
         category: 'hamburguesa',
@@ -20,7 +20,7 @@ export const products = [
         
       },
       {
-        id: 3,
+        
         name: "Coca ",
         price: 1000,
         category: 'bebida',
@@ -30,7 +30,7 @@ export const products = [
         
       },
       {
-        id: 4,
+        
         name: "ipa ",
         price: 1000,
         category: 'cerveza',

@@ -37,9 +37,9 @@ const ItemDetail = ({id, name, img,category,description,price, stock}) => {
             <footer>
                {
                 quantityAdded > 0 ? (
-                    <Link to='/cart' className='Option'>Terminar compra</Link>
+                    <Link to='/cart' className='Option' onClick={addItem}>Terminar compra</Link>
                 ) : (
-                    <ItemCount initial={1} stock={stock} onAdd={handledOnAdd} />
+                    <ItemCount initial={1} stock={stock} onAdd={handledOnAdd}/>
                 )
                }
             </footer>
