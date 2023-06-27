@@ -9,6 +9,17 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState ([])
     console.log (cart )
 
+     const subtotal = ( quantity, price )=> {
+     const subtotal = price * quantity;
+     console.log (subtotal + "sub")
+}
+
+    const quantityTotal = () => {
+          const quantityTotal = cart.reduce(
+            (total,item) => total + item.quantity, 0
+          );
+          return quantityTotal
+    };
 
     const [totalQuantity, setTotalQuantity] = useState(0);
 

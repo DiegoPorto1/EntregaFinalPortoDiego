@@ -5,18 +5,10 @@ import CartItem from "../CartItem/CartItem";
 import './Cart.css';
 
 const Cart = () => {
-  const { cart, clearCart} = useContext(CartContext);
-  const [total, setTotal] = useState(0);
+  const { cart, clearCart, quantityTotal , total} = useContext(CartContext);
+ 
 
-  useEffect(() => {
-    let calculatedTotal = 0;
-    cart.forEach(item => {
-      console.log(item.subtotal);
-      calculatedTotal += item.subtotal;
-    });
-    setTotal(calculatedTotal);
-    console.log(total)
-  }, [cart]);
+ 
 
   if (total === 0) {
     return (
@@ -43,7 +35,7 @@ const Cart = () => {
         ))}
       </div>
       <div>
-        <h3>Total: ${total}</h3>
+        <h3>Total: ${quantityTotal}</h3>
         <button onClick={() => clearCart()}>Limpiar carrito</button>
       </div>
     </div>

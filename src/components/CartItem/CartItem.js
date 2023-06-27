@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 const CartItem = ({ quantity, price, name, itemId }) => {
-  const { removeItem } = useContext(CartContext);
-  const subtotal = price * quantity;
+  const { removeItem , subtotal } = useContext(CartContext);
+  
   const handleRemoveItem = () => {
     removeItem(itemId);
   };
