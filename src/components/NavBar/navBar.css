@@ -3,6 +3,7 @@ nav {
     justify-content: space-between;
     background-color: beige;
     align-items: center;
+    height: 70px;
 }
 img {
     width: 50px;
