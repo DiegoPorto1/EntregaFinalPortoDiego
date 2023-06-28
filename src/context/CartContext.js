@@ -9,27 +9,24 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState ([])
     console.log (cart )
 
-     const subtotal = ( quantity, price )=> {
-     const subtotal = price * quantity;
-     console.log (subtotal + "sub")
-}
-
+    /* el total funciona bien, no tocar */
+const total = () => {
+    const total = cart.reduce(
+      (total,item) => total + item.quantity * item.price, 0
+    );
+    return total
+};
+    /*quantityTotal no se toca ya anda*/
     const quantityTotal = () => {
           const quantityTotal = cart.reduce(
             (total,item) => total + item.quantity, 0
           );
           return quantityTotal
     };
+    
+    
 
-    const [totalQuantity, setTotalQuantity] = useState(0);
 
-    useEffect(() => {
-        let quantity = 0;
-        cart.forEach((item) => {
-          quantity += item.quantity;
-        });
-        setTotalQuantity(quantity);
-      }, [cart]);
     
     const addItem = (item, quantity) => {
         if(!isInCart(item.id)) {
@@ -54,7 +51,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{cart , addItem, removeItem, clearCart}}>
+        <CartContext.Provider value={{cart , addItem, removeItem, clearCart,quantityTotal, total}}>
             {children}
         </CartContext.Provider>
     )

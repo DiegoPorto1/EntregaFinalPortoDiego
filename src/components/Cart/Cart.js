@@ -5,12 +5,12 @@ import CartItem from "../CartItem/CartItem";
 import './Cart.css';
 
 const Cart = () => {
-  const { cart, clearCart, quantityTotal , total} = useContext(CartContext);
+  const { cart, clearCart, total,quantityTotal } = useContext(CartContext);
  
 
  
 
-  if (total === 0) {
+  if (quantityTotal() === 0) {
     return (
       <div>
         <h1>No hay items en el carrito</h1>
@@ -29,13 +29,12 @@ const Cart = () => {
             quantity={p.quantity}
             price={p.price}
             name={p.name}
-            subtotal={p.subtotal}
             {...p}
           />
         ))}
       </div>
       <div>
-        <h3>Total: ${quantityTotal}</h3>
+        <h3>Total: ${total()}</h3>
         <button onClick={() => clearCart()}>Limpiar carrito</button>
       </div>
     </div>
